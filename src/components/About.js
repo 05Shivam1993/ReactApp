@@ -14,9 +14,9 @@ export default function About(props) {
             {/* <img src="/w3images/team1.jpg" alt="Jane"/> */}
             <div className="container my-2">
                 <h2>Shivam Srivastava</h2>
-                <p className="title">CEO & Founder</p>
+                <p className="title">Developer</p>
                 <p>Software Engineer</p>
-                <p>shivam.hbti05@gmail.com</p>
+                <p>shivam@xyz.com</p>
             </div>
             </div>
         </div>
@@ -28,7 +28,7 @@ export default function About(props) {
                 <h2>Mike Ross</h2>
                 <p className="title">Platform Architect</p>
                 <p>Software Engineer</p>
-                <p>mike@adobe.com</p>
+                <p>mike@xyz.com</p>
             </div>
             </div>
         </div>
@@ -40,7 +40,7 @@ export default function About(props) {
                 <h2>John Doe</h2>
                 <p className="title">Consultant</p>
                 <p>Software Consultant</p>
-                <p>john@adobe.com</p>
+                <p>john@xyz.com</p>
             </div>
             </div>
         </div>
