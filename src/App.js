@@ -1,7 +1,6 @@
 import './App.css';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
-import About from './components/About';
 import Alert from './components/Alert';
 import React, { useState } from 'react'
 import {
@@ -43,10 +42,8 @@ function App() {
     <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode}/>
     <Alert alert={alert}/>
     <div className="container">
-    <TextForm heading="Enter text here to analyze !" mode={mode} showAlert={showAlert}/>
      <Routes>
           <Route exact path="/Text-Utils" element={<TextForm heading="Enter text here to analyze" mode={mode} showAlert={showAlert}/>}/>
-          {/* <Route exact path="/about" element={<About mode={mode} toggleMode={toggleMode}/>}/> */}
       </Routes>
     </div>
     </Router>
