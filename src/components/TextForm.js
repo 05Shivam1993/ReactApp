@@ -49,25 +49,25 @@ export default function TextForm(props) {
         <h1>Text Analyzer</h1>
         <div className="form-group">
             <label htmlFor="exampleFormControlTextarea1">{props.heading}</label>
-            <textarea className="form-control" value={text} onChange={onChangeHandle}  style={{color:props.mode === 'dark'?'white':'#042743',backgroundColor:props.mode === 'dark'?'grey':'white'}} id="exampleFormControlTextarea1" rows="8"></textarea>
+            <textarea className="form-control" value={text} onChange={onChangeHandle}  style={{color:props.mode === 'dark'?'white':'#042743',backgroundColor:props.mode === 'dark'?'#13466e':'white'}} id="exampleFormControlTextarea1" rows="8"></textarea>
         </div>
-        <button className="btn btn-primary mx-1" data-tip data-for="upper" onClick={convertToUpper}>Upper</button>
+        <button disabled={text.length===0} className="btn btn-primary mx-1" data-tip data-for="upper" onClick={convertToUpper}>Upper</button>
         <ReactTooltip id="upper" place="top" effect="solid" id="upper">Convert into uppercase</ReactTooltip>
-        <button className="btn btn-success mx-1" data-tip data-for="lower" onClick={convertToLower}>Lower</button>
+        <button disabled={text.length===0} className="btn btn-success mx-1" data-tip data-for="lower" onClick={convertToLower}>Lower</button>
         <ReactTooltip id="upper" place="top" effect="solid" id="lower"> Convert into lowercase</ReactTooltip>
-        <button className="btn btn-warning mx-1 my-2" data-tip data-for="title" onClick={convertToCapitalize}>Capitalize</button>
+        <button disabled={text.length===0} className="btn btn-warning mx-1 my-2" data-tip data-for="title" onClick={convertToCapitalize}>Capitalize</button>
         <ReactTooltip id="upper" place="top" effect="solid" id="title">Convert into titlecase</ReactTooltip>
-        <button className="btn btn-danger mx-1 my-2" data-tip data-for="clear" onClick={clearText}>Clear</button>
+        <button disabled={text.length===0} className="btn btn-danger mx-1 my-2" data-tip data-for="clear" onClick={clearText}>Clear</button>
         <ReactTooltip id="upper" place="top" effect="solid" id="clear">Clear all text</ReactTooltip>
-        <button className="btn btn-secondary mx-1 my-2" data-tip data-for="copy" onClick={copyText}>Copy</button>
+        <button disabled={text.length===0} className="btn btn-secondary mx-1 my-2" data-tip data-for="copy" onClick={copyText}>Copy</button>
         <ReactTooltip id="upper" place="top" effect="solid" id="copy"> Copy the whole text</ReactTooltip>
-        <button className="btn btn-info mx-1 my-2" data-tip data-for="space" onClick={handleSpace}>Spaces</button>
+        <button disabled={text.length===0} className="btn btn-info mx-1 my-2" data-tip data-for="space" onClick={handleSpace}>Spaces</button>
         <ReactTooltip id="upper" place="top" effect="solid" id="space">Remove extra spaces</ReactTooltip>
         </div>
         <div className="container" style={{color:props.mode === 'dark'?'white':'#042743'}}>
             <h3>Text Summary</h3>
-            <p>Total Number of words is {text.split(" ").length - 1} and characters is {text.length}</p>
-            <p>{0.008 * text.split(" ").length} minutes required to read</p>
+            <p>Total Number of words is {text.split(" ").filter((element)=>{return element.length !==0}).length} and characters is {text.length}</p>
+            <p>{0.008 * text.split(" ").filter((element)=>{return element.length !==0}).length} minutes required to read</p>
         <h3>Preview</h3>
         <p>{text.length > 0 ? text:"Enter text in the box to preview it here" }</p>
         </div>
